@@ -268,7 +268,7 @@ def handle_list(name, url_list):
         elif "fenomed" in t:
             session = HTMLSession()
             r = session.get(t)
-            r.html.render()
+            r.html.render(timeout=20)
             soup = BeautifulSoup(r.html.html, features="html.parser")
             l = handle_fenomed_listing(soup)
         elif "medididakt" in t:
@@ -303,7 +303,7 @@ def fetch_data():
                                            url_list=name_list_dict[key])
     prefetched_data_to_serialize['time'] = time.strftime("%Y-%m-%d %H:%M:%S",
                                                          time.gmtime())
-    with open('tacmed_data.json', 'w', encoding='utf-8') as f:
+    with open('./output/tacmed_data.json', 'w', encoding='utf-8') as f:
         json.dump(prefetched_data_to_serialize, f, ensure_ascii=False, indent=4)
 
 

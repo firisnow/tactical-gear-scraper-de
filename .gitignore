@@ -5,4 +5,4 @@
 **/*.py[cod]
 
 # project specific data
-tacmed_data.json
+output
