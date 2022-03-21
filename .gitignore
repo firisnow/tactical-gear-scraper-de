@@ -5,4 +5,4 @@
 **/*.py[cod]
 
 # Telegram bot for personal use
-src/telegram_bot.py
+tacmed_data.json
