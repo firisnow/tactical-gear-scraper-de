@@ -1,5 +1,6 @@
 import requests
 import time
+import json
 
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
@@ -25,18 +26,40 @@ name_list_dict = {
 
 prefetched_data = dict()
 
+prefetched_data_to_serialize = {
+    'scheme': ['product name', 'price in €', 'items available (if info on website)', 'url']
+}
+
 
 test_list = [
-    "https://www.medididakt.de/shop/notfallequipment-notfallbehaeltnisse-notfallsets/sonstiges-notfallequipment-notfallbehaeltnisse-notfallsets/emergency-bandage-notfall-bandage-t3/",
-    "https://www.medididakt.de/shop/notfallkoffer-taschen/notfalltaschen/taktische-tasche-medical-bag-gefuellt/"
-    ]
+    "https://www.ostalb-med-shop.de/Tactical--KSK--SEK--Gaze--Mull--Verbandmull--Woundpacking--Wundpacken.html",
+    "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543-544-545.html",
+    "https://www.ostalb-med-shop.de/i-gel--Larynxtubus--supraglottisch--suprapharyngeal--Atemhilfe--Atemweg--Resus-Set--Resus--Pack--O2--igel--larynxtubus.html"
+]
+
+
+def handle_ostalb_med_listing(soup):
+    versand = False
+    #<img src="images/icons/status/orange.png" alt="ca. 5-6 Tage">
+    for tag in soup.find_all(src="images/icons/status/orange.png"):
+        versand = True
+    for tag in soup.find_all(src="images/icons/status/green.png"):
+        versand = True
+
+    if not versand:
+        return None, None, None
+    name = soup.h1.string.strip()
+    for tag in soup.find_all(class_="current-price-container"):
+        price = tag.string.split(' ')[0].strip()
+        break
+    return name, price, None
 
 
 def handle_medididakt_listing(soup):
     for tag in soup.find_all(class_="out-of-stock"):
         return None, None, None
 
-    name = get_name_from_h1(soup)
+    name = soup.h1.string.strip()
     for tag in soup.find_all(class_="woocommerce-Price-amount"):
         price = tag.contents[0].string.strip()
         break
@@ -250,6 +273,8 @@ def handle_list(name, url_list):
             l = handle_fenomed_listing(soup)
         elif "medididakt" in t:
             l = handle_medididakt_listing(soup)
+        elif "ostalb-med-shop" in t:
+            l = handle_ostalb_med_listing(soup)
         else:
             l = [None]
 
@@ -260,21 +285,27 @@ def handle_list(name, url_list):
     for l in l_res:
         result = result + "\n\n" + format_listing(link=l[3], name=l[0],
                                                 price=l[1], lager=l[2])
+    prefetched_data_to_serialize[name] = l_res
     return result
 
-#"""
+"""
 result = ""
 for key in name_list_dict:
     result = result + handle_list(name=key, url_list=name_list_dict[key])
 print(result)
+"""
 #"""
-"""
-print(handle_list('Test', test_list))
-"""
+#print(handle_list('Test', test_list))
+#"""
 def fetch_data():
     for key in name_list_dict:
         prefetched_data[key] = handle_list(name=key,
                                            url_list=name_list_dict[key])
+    prefetched_data_to_serialize['time'] = time.strftime("%Y-%m-%d %H:%M:%S",
+                                                         time.gmtime())
+    with open('tacmed_data.json', 'w', encoding='utf-8') as f:
+        json.dump(prefetched_data_to_serialize, f, ensure_ascii=False, indent=4)
+
 
 def fetch_data_runner():
     print('data fetcher running')

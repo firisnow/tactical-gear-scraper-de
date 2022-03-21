@@ -36,5 +36,11 @@ em_bandages_url_list = [
     "https://www.medididakt.de/shop/notfallequipment-notfallbehaeltnisse-notfallsets/sonstiges-notfallequipment-notfallbehaeltnisse-notfallsets/emergency-bandage-notfall-bandage-t3/",
     "https://www.medididakt.de/shop/notfallequipment-notfallbehaeltnisse-notfallsets/sonstiges-notfallequipment-notfallbehaeltnisse-notfallsets/emergency-bandage-notfall-bandage/",
     "https://www.medididakt.de/shop/notfallequipment-notfallbehaeltnisse-notfallsets/sonstiges-notfallequipment-notfallbehaeltnisse-notfallsets/emergency-bandage-notfall-bandage-zivil/",
+    "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage.html",
+    "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542.html",
+    "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543.html",
+    "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543-544.html",
+    "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543-544-546.html",
+    "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543-544-545.html",
 
 ]

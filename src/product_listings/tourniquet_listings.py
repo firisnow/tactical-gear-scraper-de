@@ -36,5 +36,8 @@ tourniquet_url_list = [
     "https://www.fenomed.shop/notfallmedizin/behandlung/staubaender/sof-tourniquet-abbindesystem-gen-4-schwarz_2319_4316",
     "https://www.fenomed.shop/notfallmedizin/sam-xt-tourniquet-zum-abbinden-von-extremitaeten_2390_4532",
     "https://www.medididakt.de/shop/notfallequipment-notfallbehaeltnisse-notfallsets/sonstiges-notfallequipment-notfallbehaeltnisse-notfallsets/tourniquetdas-combat-application-tourniquet-c-a-t-ist-ein-kompaktes-abbinde-system-zur-temporaeren-blutsperre-an-den-extremitaeten-das-c-a-t-verfuegt-ueber-eine-individuelle-groes/",
+    "https://www.ostalb-med-shop.de/Tourniquet--CAT--Combat-Application-Tourniquet--Original--Tactical--KSK--SEK--Abbinden--Blutung--Amputation--Unfall.html",
+    "https://www.ostalb-med-shop.de/Tourniquet--CAT--Combat-Application-Tourniquet--Original--Tactical--KSK--SEK--Abbinden--Blutung--Amputation--Unfall-539.html",
+    "https://www.ostalb-med-shop.de/Tourniquet--CAT--Combat-Application-Tourniquet--Original--Tactical--KSK--SEK--Abbinden--Blutung--Amputation--Unfall-539-540.html",
 
 ]
