@@ -1,0 +1,8 @@
+.idea
+.DS_Store
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+**/*.py[cod]
+
+# Telegram bot for personal use
+src/telegram_bot.py
