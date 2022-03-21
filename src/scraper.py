@@ -303,7 +303,7 @@ def fetch_data():
                                            url_list=name_list_dict[key])
     prefetched_data_to_serialize['time'] = time.strftime("%Y-%m-%d %H:%M:%S",
                                                          time.gmtime())
-    with open('./output/tacmed_data.json', 'w', encoding='utf-8') as f:
+    with open('/src/output/tacmed_data.json', 'w', encoding='utf-8') as f:
         json.dump(prefetched_data_to_serialize, f, ensure_ascii=False, indent=4)
 
 
