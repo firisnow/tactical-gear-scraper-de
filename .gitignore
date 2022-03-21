@@ -4,5 +4,5 @@
 **/__pycache__/
 **/*.py[cod]
 
-# Telegram bot for personal use
+# project specific data
 tacmed_data.json
