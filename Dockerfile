@@ -1,4 +1,5 @@
 FROM python:latest
-COPY *.py ./
+COPY requirements.txt .
+COPY src .
 RUN pip install -r requirements.txt
-CMD "python" "telegram_bot.py"
+CMD "python" "src/telegram_bot.py"
