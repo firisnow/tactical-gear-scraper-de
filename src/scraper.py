@@ -4,8 +4,6 @@ import time
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 
-from scraper_utils import get_name_from_h1
-
 from product_listings.trauma_kit_listings import trauma_kit_url_list
 from product_listings.tourniquet_listings import tourniquet_url_list
 from product_listings.swat_tourniquet_listings import swat_tourniquet_url_list
@@ -267,8 +265,6 @@ def handle_list(name, url_list):
 #"""
 result = ""
 for key in name_list_dict:
-    if result != "":
-        result = result + "\n\n"
     result = result + handle_list(name=key, url_list=name_list_dict[key])
 print(result)
 #"""
