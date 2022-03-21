@@ -36,7 +36,7 @@ def handle_medididakt_listing(soup):
     for tag in soup.find_all(class_="out-of-stock"):
         return None, None, None
 
-    name = get_name_from_h1(soup)
+    name = soup.h1.string.strip()
     for tag in soup.find_all(class_="woocommerce-Price-amount"):
         price = tag.contents[0].string.strip()
         break
