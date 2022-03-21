@@ -13,6 +13,7 @@ from product_listings.hem_dressing_listings import hem_dressing_url_list
 from product_listings.hemostatic_agent_listings import hemostatic_agent_url_list
 from product_listings.occlusive_dressing_listings import occ_dressing_url_list
 
+session = HTMLSession()
 
 name_list_dict = {
     'CAT / SOF / SAM Tourniquet': tourniquet_url_list,
@@ -266,7 +267,6 @@ def handle_list(name, url_list):
         elif "bestprotection.de" in t:
             l = handle_bestprotection_listing(soup)
         elif "fenomed" in t:
-            session = HTMLSession()
             r = session.get(t)
             r.html.render(timeout=20)
             soup = BeautifulSoup(r.html.html, features="html.parser")
