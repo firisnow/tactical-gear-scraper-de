@@ -9,7 +9,6 @@ em_bandages_url_list = [
     "https://www.medic-bandages.de/olaes-bandage-10cm-flach-in-lagen.html",
     "https://www.medic-bandages.de/olaes-bandage-15cm-gerollt.html",
     "https://www.wero.de/wero-med-x/emergency-bandage",
-    "https://www.wero.de/wero-med-x/h-h-mini-compression-bandage",
     "https://www.wero.de/wero-med-x/emergency-bandage-t3-tactical-trauma-treatment-bandage",
     "https://www.wero.de/wero-med-x/emergency-bandage-abdominalbandage/multi-bandage",
     "https://www.wero.de/wero-med-x/notfallbandage-h-h-h-bandage",
