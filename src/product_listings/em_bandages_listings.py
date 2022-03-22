@@ -13,7 +13,6 @@ em_bandages_url_list = [
     "https://www.wero.de/wero-med-x/emergency-bandage-abdominalbandage/multi-bandage",
     "https://www.wero.de/wero-med-x/notfallbandage-h-h-h-bandage",
     "https://www.wero.de/wero-med-x/h-h-emergency-compression-dressing-ecd",
-    "https://www.obramo-security.com/H-H-Mini-Compression-Bandage",
     "https://der-verbandskasten.de/produkt/das-emergency-bandage-trauma-wundverband-10-cm-x-450-cm/",
     "https://www.mbs-medizintechnik.com/636/olaes-bandagen-traumaverband-vakuumverpackt",
     "https://www.mbs-medizintechnik.com/defence/trauma-tacmed/trauma-verbaende/659/tac-med-solutions-the-blast-bandage-masse-50-x-50-cm",
