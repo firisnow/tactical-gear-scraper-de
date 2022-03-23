@@ -42,5 +42,14 @@ em_bandages_url_list = [
     "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543-544.html",
     "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543-544-546.html",
     "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543-544-545.html",
+    "https://huntac.de/p/israeli-notfall-bandage-10-cm?c=1583",
+    "https://huntac.de/p/israeli-notfall-bandage-15-cm?c=1583",
+    "https://huntac.de/p/israeli-notfall-bandage-15-cm-mit-2.-wundauflage?c=1583",
+    "https://www.sanismart.de/militaer-gruen-emergency-bandage--3582-1",
+    "https://www.sanismart.de/militaer-gruen-emergency-bandage--3582-2",
+    "https://www.sanismart.de/olaes-modular-trauma-bandage--3058-1",
+    "https://www.sanismart.de/olaes-modular-trauma-bandage--3058-2",
+    "https://www.sanismart.de/zivil-weiss-emergency-bandage-10-cm-x-4-5-m--3581",
+    "https://www.sanismart.de/militaer-gruen-tactical-trauma-treatment-bandage-10-cm-x-3-7-m--3585",
 
 ]

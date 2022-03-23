@@ -32,15 +32,40 @@ prefetched_data_to_serialize = {
 
 
 test_list = [
-    "https://www.ostalb-med-shop.de/Tactical--KSK--SEK--Gaze--Mull--Verbandmull--Woundpacking--Wundpacken.html",
-    "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543-544-545.html",
-    "https://www.ostalb-med-shop.de/i-gel--Larynxtubus--supraglottisch--suprapharyngeal--Atemhilfe--Atemweg--Resus-Set--Resus--Pack--O2--igel--larynxtubus.html"
+    "https://www.sanismart.de/c-a-t-combat-application-tourniquet-abbinde-system-mit-time-band--2466-2",
+    "https://www.sanismart.de/tee-uu-ct-hms-safe-lock-3t-karabiner-111-x-73-mm--2058",
+    "https://www.sanismart.de/c-a-t-combat-application-tourniquet-abbinde-system-mit-time-band--2466-3"
 ]
+
+
+def handle_sanismart_listing(soup):
+    for tag in soup.find_all(class_="twt-product-stock-label"):
+        if "Derzeit nicht auf Lager." in tag.get_text():
+            return None, None, None
+
+    name = soup.h1.string.strip()
+    for tag in soup.find_all(class_="product-detail-price-container"):
+        price = tag.contents[1]['content']
+        break
+    return name, price, None
+
+
+def handle_huntac_listing(soup):
+    versand = False
+    for tag in soup.find_all(class_="delivery--status-available"):
+        versand = True
+
+    if not versand:
+        return None, None, None
+    name = soup.h1.string.strip()
+    for tag in soup.find_all(itemprop="price"):
+        price = tag['content']
+        break
+    return name, price, None
 
 
 def handle_ostalb_med_listing(soup):
     versand = False
-    #<img src="images/icons/status/orange.png" alt="ca. 5-6 Tage">
     for tag in soup.find_all(src="images/icons/status/orange.png"):
         versand = True
     for tag in soup.find_all(src="images/icons/status/green.png"):
@@ -275,6 +300,10 @@ def handle_list(name, url_list):
             l = handle_medididakt_listing(soup)
         elif "ostalb-med-shop" in t:
             l = handle_ostalb_med_listing(soup)
+        elif "huntac" in t:
+            l = handle_huntac_listing(soup)
+        elif "sanismart" in t:
+            l = handle_sanismart_listing(soup)
         else:
             l = [None]
 
@@ -288,15 +317,7 @@ def handle_list(name, url_list):
     prefetched_data_to_serialize[name] = l_res
     return result
 
-"""
-result = ""
-for key in name_list_dict:
-    result = result + handle_list(name=key, url_list=name_list_dict[key])
-print(result)
-"""
-#"""
-#print(handle_list('Test', test_list))
-#"""
+
 def fetch_data():
     for key in name_list_dict:
         prefetched_data[key] = handle_list(name=key,
@@ -312,3 +333,6 @@ def fetch_data_runner():
     while True:
         fetch_data()
         time.sleep(600)
+
+
+#print(handle_list('Test', test_list))

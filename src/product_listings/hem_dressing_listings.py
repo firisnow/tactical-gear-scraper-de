@@ -28,5 +28,8 @@ hem_dressing_url_list = [
     "https://www.bestprotection.de/ausruestung/erste-hilfe/verbandsmaterial/quikclot-ems-rolled-gauze-7-6-cm-x-1-22m.html",
     "https://www.bestprotection.de/ausruestung/erste-hilfe/verbandsmaterial/quickclot-bleeding-control-dressing-wundkompresse.html",
     "https://www.fenomed.shop/notfallmedizin/behandlung/verbandmaterial/hemcon-chitogauze-xr-pro-gazeverband_2454_4686",
+    "https://huntac.de/p/quikclot-z-folded-gauze?c=1583",
+    "https://www.sanismart.de/celox-gauze-rapid-gefaltet-7-6-cm-x-1-52-m-schnellstes-haemostyptikum-kompression--6547",
+    "https://www.sanismart.de/celox-gauze-rolle-wundverband-mit-haemostyptikum-7-6-cm-x-3-m-steril--6461",
 
 ]
