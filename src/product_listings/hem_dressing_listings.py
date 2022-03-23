@@ -31,5 +31,5 @@ hem_dressing_url_list = [
     "https://huntac.de/p/quikclot-z-folded-gauze?c=1583",
     "https://www.sanismart.de/celox-gauze-rapid-gefaltet-7-6-cm-x-1-52-m-schnellstes-haemostyptikum-kompression--6547",
     "https://www.sanismart.de/celox-gauze-rolle-wundverband-mit-haemostyptikum-7-6-cm-x-3-m-steril--6461",
-
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM19&CHKBez&txtSuchwert=tourniquet&sb=Artikelnummersort&maibm=1&mapg=2&Start=40&AnzGes=54"
 ]
