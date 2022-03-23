@@ -5,6 +5,8 @@ import json
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 
+#from requests.exceptions import NewConnectionError
+
 from product_listings.trauma_kit_listings import trauma_kit_url_list
 from product_listings.tourniquet_listings import tourniquet_url_list
 from product_listings.swat_tourniquet_listings import swat_tourniquet_url_list
@@ -33,15 +35,38 @@ prefetched_data_to_serialize = {
 
 
 test_list = [
-    "https://www.ostalb-med-shop.de/Tactical--KSK--SEK--Gaze--Mull--Verbandmull--Woundpacking--Wundpacken.html",
-    "https://www.ostalb-med-shop.de/Israeli-Bandage--Emergency-Bandage--Notverband--The-Emergency-Bandage-542-543-544-545.html",
-    "https://www.ostalb-med-shop.de/i-gel--Larynxtubus--supraglottisch--suprapharyngeal--Atemhilfe--Atemweg--Resus-Set--Resus--Pack--O2--igel--larynxtubus.html"
-]
+    "https://www.mbs-medizintechnik.com/notfallausruestung/erste-hilfe/pflaster-und-heftpflaster/1434/halo-chest-seal-thoraxverschlusspflaster",
+    ]
+
+
+def handle_sanismart_listing(soup):
+    for tag in soup.find_all(class_="twt-product-stock-label"):
+        if "Derzeit nicht auf Lager." in tag.get_text():
+            return None, None, None
+
+    name = soup.h1.string.strip()
+    for tag in soup.find_all(class_="product-detail-price-container"):
+        price = tag.contents[1]['content']
+        break
+    return name, price, None
+
+
+def handle_huntac_listing(soup):
+    versand = False
+    for tag in soup.find_all(class_="delivery--status-available"):
+        versand = True
+
+    if not versand:
+        return None, None, None
+    name = soup.h1.string.strip()
+    for tag in soup.find_all(itemprop="price"):
+        price = tag['content']
+        break
+    return name, price, None
 
 
 def handle_ostalb_med_listing(soup):
     versand = False
-    #<img src="images/icons/status/orange.png" alt="ca. 5-6 Tage">
     for tag in soup.find_all(src="images/icons/status/orange.png"):
         versand = True
     for tag in soup.find_all(src="images/icons/status/green.png"):
@@ -243,10 +268,18 @@ def handle_list(name, url_list):
     result = ""
     l_res = list()
     for t in url_list:
-        r = requests.get(t)
-        soup = BeautifulSoup(r.content, features="html.parser")
+        try:
+            if not "mbs-medizintechnik.com" in t: #website down
+                r = requests.get(t)
+                soup = BeautifulSoup(r.content, features="html.parser")
+            else:
+                soup = None
+        except:
+            soup = None
 
-        if 'medic-bandages' in t:
+        if soup is None:
+            l = [None]
+        elif 'medic-bandages' in t:
             l = handle_medic_bandages_listing(soup)
         elif 'wero-med-x' in t:
             l = handle_wero_listing(soup)
@@ -267,14 +300,21 @@ def handle_list(name, url_list):
         elif "bestprotection.de" in t:
             l = handle_bestprotection_listing(soup)
         elif "fenomed" in t:
-            r = session.get(t)
-            r.html.render(timeout=20)
-            soup = BeautifulSoup(r.html.html, features="html.parser")
-            l = handle_fenomed_listing(soup)
+            try:
+                r = session.get(t)
+                r.html.render(timeout=20)
+                soup = BeautifulSoup(r.html.html, features="html.parser")
+                l = handle_fenomed_listing(soup)
+            except:
+                l = [None]
         elif "medididakt" in t:
             l = handle_medididakt_listing(soup)
         elif "ostalb-med-shop" in t:
             l = handle_ostalb_med_listing(soup)
+        elif "huntac" in t:
+            l = handle_huntac_listing(soup)
+        elif "sanismart" in t:
+            l = handle_sanismart_listing(soup)
         else:
             l = [None]
 
@@ -288,27 +328,25 @@ def handle_list(name, url_list):
     prefetched_data_to_serialize[name] = l_res
     return result
 
-"""
-result = ""
-for key in name_list_dict:
-    result = result + handle_list(name=key, url_list=name_list_dict[key])
-print(result)
-"""
-#"""
-#print(handle_list('Test', test_list))
-#"""
+
 def fetch_data():
     for key in name_list_dict:
         prefetched_data[key] = handle_list(name=key,
                                            url_list=name_list_dict[key])
     prefetched_data_to_serialize['time'] = time.strftime("%Y-%m-%d %H:%M:%S",
                                                          time.gmtime())
-    with open('/src/output/tacmed_data.json', 'w', encoding='utf-8') as f:
-        json.dump(prefetched_data_to_serialize, f, ensure_ascii=False, indent=4)
+    try:
+        with open('/src/output/tacmed_data.json', 'w', encoding='utf-8') as f:
+            json.dump(prefetched_data_to_serialize, f, ensure_ascii=False, indent=4)
+    except:
+        pass
 
 
 def fetch_data_runner():
     print('data fetcher running')
     while True:
         fetch_data()
-        time.sleep(600)
+        time.sleep(300)
+
+fetch_data()
+#print(handle_list('Test', test_list))

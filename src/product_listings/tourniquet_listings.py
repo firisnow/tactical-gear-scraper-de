@@ -4,6 +4,7 @@ tourniquet_url_list = [
     "https://www.medic-bandages.de/sam-xt-tourniquet-orange.html",
     "https://www.medic-bandages.de/sof-tourniquet-gen-4-softt-w-farbe-blau.html",
     "https://www.medic-bandages.de/cat-tourniquet-orange-gen7.html",
+    "https://www.medic-bandages.de/cat-tourniquet-blau.html",
     "https://www.medic-bandages.de/the-new-sof-tourniquet-farbe-tan.html",
     "https://www.medic-bandages.de/the-new-sof-tourniquet-farbe-tan-956.html",
     "https://www.medic-bandages.de/the-new-sof-tourniquet-farbe-tan-956-995.html",
@@ -39,5 +40,11 @@ tourniquet_url_list = [
     "https://www.ostalb-med-shop.de/Tourniquet--CAT--Combat-Application-Tourniquet--Original--Tactical--KSK--SEK--Abbinden--Blutung--Amputation--Unfall.html",
     "https://www.ostalb-med-shop.de/Tourniquet--CAT--Combat-Application-Tourniquet--Original--Tactical--KSK--SEK--Abbinden--Blutung--Amputation--Unfall-539.html",
     "https://www.ostalb-med-shop.de/Tourniquet--CAT--Combat-Application-Tourniquet--Original--Tactical--KSK--SEK--Abbinden--Blutung--Amputation--Unfall-539-540.html",
+    "https://huntac.de/p/c-a-t-gen.-7-abbinde-system-tourniquet?c=1583",
+    "https://www.sanismart.de/c-a-t-combat-application-tourniquet-abbinde-system-mit-time-band--2466-3",
+    "https://www.sanismart.de/c-a-t-combat-application-tourniquet-abbinde-system-mit-time-band--2466-2",
+    "https://www.sanismart.de/sof-tactical-tourniquet--3057-2",
+    "https://www.sanismart.de/sof-tactical-tourniquet--3057-3",
+    "https://www.sanismart.de/sof-tactical-tourniquet--3057-1",
 
 ]
