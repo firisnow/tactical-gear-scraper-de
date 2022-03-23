@@ -46,5 +46,7 @@ tourniquet_url_list = [
     "https://www.sanismart.de/sof-tactical-tourniquet--3057-2",
     "https://www.sanismart.de/sof-tactical-tourniquet--3057-3",
     "https://www.sanismart.de/sof-tactical-tourniquet--3057-1",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=SAMXT&CHKBez&txtSuchwert=tourniquet&sb=Artikelnummersort&maibm=1&mapg=2&Start=40&AnzGes=54",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS2&CHKBez&txtSuchwert=tourniquet&sb=Artikelnummersort&maibm=1&mapg=2&Start=20&AnzGes=54",
 
 ]

@@ -35,8 +35,27 @@ prefetched_data_to_serialize = {
 
 
 test_list = [
-    "https://www.mbs-medizintechnik.com/notfallausruestung/erste-hilfe/pflaster-und-heftpflaster/1434/halo-chest-seal-thoraxverschlusspflaster",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=MEDI-SWATT&CHKBez&Suche&txtSuchwert=tourniquet&maibm=1&mapg=2",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM4&CHKBez&txtSuchwert=bandage&sb=Artikelnummersort&maibm=1&mapg=2&Start=40&AnzGes=60"
     ]
+
+
+def handle_helpishop_listing(soup):
+    versand = False
+    for tag in soup.find_all(src="images/ampelgreen.png"):
+        if "lieferbar in 3-5 Werktagen" in tag['title']:
+            versand = True
+    for tag in soup.find_all(src="images/ampelyellow.png"):
+        if "lieferbar in 3-5 Werktagen" in tag['title']:
+            versand = True
+    if not versand:
+        return None, None, None
+
+    name = soup.h1.string.strip()
+    for tag in soup.find_all('td', class_="art_preis_detail_wert"):
+        price = tag.get_text()[:-2].strip()
+        break
+    return name, price, None
 
 
 def handle_sanismart_listing(soup):
@@ -270,52 +289,56 @@ def handle_list(name, url_list):
     for t in url_list:
         try:
             if not "mbs-medizintechnik.com" in t: #website down
-                r = requests.get(t)
-                soup = BeautifulSoup(r.content, features="html.parser")
+                if "fenomed" in t or "helpishop" in t:
+                    r = session.get(t)
+                    r.html.render(timeout=20)
+                    soup = BeautifulSoup(r.html.html, features="html.parser")
+                else:
+                    r = requests.get(t)
+                    soup = BeautifulSoup(r.content, features="html.parser")
             else:
                 soup = None
         except:
             soup = None
 
-        if soup is None:
-            l = [None]
-        elif 'medic-bandages' in t:
-            l = handle_medic_bandages_listing(soup)
-        elif 'wero-med-x' in t:
-            l = handle_wero_listing(soup)
-        elif "md-textil.info" in t:
-            l = handle_md_textil_listing(soup)
-        elif "obramo-security" in t:
-            l = handle_obramo_security_listing(soup)
-        elif "der-verbandskasten.de" in t:
-            l = handle_verbandskasten_listing(soup)
-        elif "mbs-medizintechnik.com" in t:
-            l = handle_mbs_medizintechnik_listing(soup)
-        elif "warthog-store" in t:
-            l = handle_warthog_listing(soup)
-        elif "flexeo" in t:
-            l = handle_flexeo_listing(soup)
-        elif "1a-medizintechnik" in t:
-            l = handle_1a_med_listing(soup)
-        elif "bestprotection.de" in t:
-            l = handle_bestprotection_listing(soup)
-        elif "fenomed" in t:
-            try:
-                r = session.get(t)
-                r.html.render(timeout=20)
-                soup = BeautifulSoup(r.html.html, features="html.parser")
-                l = handle_fenomed_listing(soup)
-            except:
+        try:
+            if soup is None:
                 l = [None]
-        elif "medididakt" in t:
-            l = handle_medididakt_listing(soup)
-        elif "ostalb-med-shop" in t:
-            l = handle_ostalb_med_listing(soup)
-        elif "huntac" in t:
-            l = handle_huntac_listing(soup)
-        elif "sanismart" in t:
-            l = handle_sanismart_listing(soup)
-        else:
+            elif 'medic-bandages' in t:
+                l = handle_medic_bandages_listing(soup)
+            elif 'wero-med-x' in t:
+                l = handle_wero_listing(soup)
+            elif "md-textil.info" in t:
+                l = handle_md_textil_listing(soup)
+            elif "obramo-security" in t:
+                l = handle_obramo_security_listing(soup)
+            elif "der-verbandskasten.de" in t:
+                l = handle_verbandskasten_listing(soup)
+            elif "mbs-medizintechnik.com" in t:
+                l = handle_mbs_medizintechnik_listing(soup)
+            elif "warthog-store" in t:
+                l = handle_warthog_listing(soup)
+            elif "flexeo" in t:
+                l = handle_flexeo_listing(soup)
+            elif "1a-medizintechnik" in t:
+                l = handle_1a_med_listing(soup)
+            elif "bestprotection.de" in t:
+                l = handle_bestprotection_listing(soup)
+            elif "fenomed" in t:
+                l = handle_fenomed_listing(soup)
+            elif "medididakt" in t:
+                l = handle_medididakt_listing(soup)
+            elif "ostalb-med-shop" in t:
+                l = handle_ostalb_med_listing(soup)
+            elif "huntac" in t:
+                l = handle_huntac_listing(soup)
+            elif "sanismart" in t:
+                l = handle_sanismart_listing(soup)
+            elif "helpishop" in t:
+                l = handle_helpishop_listing(soup)
+            else:
+                l = [None]
+        except:
             l = [None]
 
         if l[0] is not None:
@@ -348,5 +371,5 @@ def fetch_data_runner():
         fetch_data()
         time.sleep(300)
 
-fetch_data()
+#fetch_data()
 #print(handle_list('Test', test_list))
