@@ -29,5 +29,7 @@ occ_dressing_url_list = [
     "https://www.bestprotection.de/ausruestung/erste-hilfe/verbandsmaterial/beacon-thorax-pflaster-chest-seal-mit-ventil-2er-pack.html",
     "https://www.bestprotection.de/ausruestung/erste-hilfe/verbandsmaterial/rapid-medical-chest-seal.html",
     "https://www.medididakt.de/shop/notfallequipment-notfallbehaeltnisse-notfallsets/sonstiges-notfallequipment-notfallbehaeltnisse-notfallsets/thoraxpflaster-hyfin-chest-seal/",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM8",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM9",
 
 ]

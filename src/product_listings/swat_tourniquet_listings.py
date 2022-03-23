@@ -6,6 +6,10 @@ swat_tourniquet_url_list = [
     "https://flexeo.shop/produkt/swat-t-tourniquet-orange/",
     "https://www.1a-medizintechnik.de/SWAT-T-Tourniquet-in-schwarz/5381",
     "https://www.1a-medizintechnik.de/SWAT-T-Tourniquet-in-orange/8066",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS5&CHKBez&txtSuchwert=tourniquet&sb=Artikelnummersort&maibm=1&mapg=2&Start=20&AnzGes=54",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=MEDI-SWATT&CHKBez&txtSuchwert=tourniquet&sb=Artikelnummersort&maibm=1&mapg=2&Start=0&AnzGes=54"
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS5",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS5-A",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=MEDI-SWATT",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS4",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS4-A",
+
 ]

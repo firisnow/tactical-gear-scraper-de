@@ -49,9 +49,9 @@ em_bandages_url_list = [
     "https://www.sanismart.de/olaes-modular-trauma-bandage--3058-2",
     "https://www.sanismart.de/zivil-weiss-emergency-bandage-10-cm-x-4-5-m--3581",
     "https://www.sanismart.de/militaer-gruen-tactical-trauma-treatment-bandage-10-cm-x-3-7-m--3585",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM18&CHKBez&txtSuchwert=bandage&sb=Artikelnummersort&maibm=1&mapg=2&Start=20&AnzGes=60",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM26&CHKBez&txtSuchwert=bandage&sb=Artikelnummersort&maibm=1&mapg=2&Start=20&AnzGes=60",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM6&CHKBez&txtSuchwert=bandage&sb=Artikelnummersort&maibm=1&mapg=2&Start=40&AnzGes=60",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM7&CHKBez&txtSuchwert=bandage&sb=Artikelnummersort&maibm=1&mapg=2&Start=40&AnzGes=60",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM4&CHKBez&txtSuchwert=bandage&sb=Artikelnummersort&maibm=1&mapg=2&Start=40&AnzGes=60"
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM18",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM26",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM6",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM7",
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM4"
 ]
