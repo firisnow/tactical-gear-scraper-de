@@ -4,6 +4,7 @@ tourniquet_url_list = [
     "https://www.medic-bandages.de/sam-xt-tourniquet-orange.html",
     "https://www.medic-bandages.de/sof-tourniquet-gen-4-softt-w-farbe-blau.html",
     "https://www.medic-bandages.de/cat-tourniquet-orange-gen7.html",
+    "https://www.medic-bandages.de/cat-tourniquet-blau.html",
     "https://www.medic-bandages.de/the-new-sof-tourniquet-farbe-tan.html",
     "https://www.medic-bandages.de/the-new-sof-tourniquet-farbe-tan-956.html",
     "https://www.medic-bandages.de/the-new-sof-tourniquet-farbe-tan-956-995.html",

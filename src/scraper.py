@@ -5,6 +5,8 @@ import json
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 
+#from requests.exceptions import NewConnectionError
+
 from product_listings.trauma_kit_listings import trauma_kit_url_list
 from product_listings.tourniquet_listings import tourniquet_url_list
 from product_listings.swat_tourniquet_listings import swat_tourniquet_url_list
@@ -33,10 +35,8 @@ prefetched_data_to_serialize = {
 
 
 test_list = [
-    "https://www.sanismart.de/c-a-t-combat-application-tourniquet-abbinde-system-mit-time-band--2466-2",
-    "https://www.sanismart.de/tee-uu-ct-hms-safe-lock-3t-karabiner-111-x-73-mm--2058",
-    "https://www.sanismart.de/c-a-t-combat-application-tourniquet-abbinde-system-mit-time-band--2466-3"
-]
+    "https://www.mbs-medizintechnik.com/notfallausruestung/erste-hilfe/pflaster-und-heftpflaster/1434/halo-chest-seal-thoraxverschlusspflaster",
+    ]
 
 
 def handle_sanismart_listing(soup):
@@ -268,10 +268,18 @@ def handle_list(name, url_list):
     result = ""
     l_res = list()
     for t in url_list:
-        r = requests.get(t)
-        soup = BeautifulSoup(r.content, features="html.parser")
+        try:
+            if not "mbs-medizintechnik.com" in t: #website down
+                r = requests.get(t)
+                soup = BeautifulSoup(r.content, features="html.parser")
+            else:
+                soup = None
+        except:
+            soup = None
 
-        if 'medic-bandages' in t:
+        if soup is None:
+            l = [None]
+        elif 'medic-bandages' in t:
             l = handle_medic_bandages_listing(soup)
         elif 'wero-med-x' in t:
             l = handle_wero_listing(soup)
@@ -292,10 +300,13 @@ def handle_list(name, url_list):
         elif "bestprotection.de" in t:
             l = handle_bestprotection_listing(soup)
         elif "fenomed" in t:
-            r = session.get(t)
-            r.html.render(timeout=20)
-            soup = BeautifulSoup(r.html.html, features="html.parser")
-            l = handle_fenomed_listing(soup)
+            try:
+                r = session.get(t)
+                r.html.render(timeout=20)
+                soup = BeautifulSoup(r.html.html, features="html.parser")
+                l = handle_fenomed_listing(soup)
+            except:
+                l = [None]
         elif "medididakt" in t:
             l = handle_medididakt_listing(soup)
         elif "ostalb-med-shop" in t:
@@ -324,15 +335,18 @@ def fetch_data():
                                            url_list=name_list_dict[key])
     prefetched_data_to_serialize['time'] = time.strftime("%Y-%m-%d %H:%M:%S",
                                                          time.gmtime())
-    with open('/src/output/tacmed_data.json', 'w', encoding='utf-8') as f:
-        json.dump(prefetched_data_to_serialize, f, ensure_ascii=False, indent=4)
+    try:
+        with open('/src/output/tacmed_data.json', 'w', encoding='utf-8') as f:
+            json.dump(prefetched_data_to_serialize, f, ensure_ascii=False, indent=4)
+    except:
+        pass
 
 
 def fetch_data_runner():
     print('data fetcher running')
     while True:
         fetch_data()
-        time.sleep(600)
+        time.sleep(300)
 
-
+fetch_data()
 #print(handle_list('Test', test_list))

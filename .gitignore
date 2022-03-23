@@ -5,4 +5,4 @@
 **/*.py[cod]
 
 # project specific data
-output/*.json
+src/output/*.json
