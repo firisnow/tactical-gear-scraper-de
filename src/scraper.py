@@ -343,6 +343,8 @@ def handle_list(name, url_list):
     result = ""
     l_res = list()
     for t in url_list:
+        #print(t)
+
         try:
             if not "mbs-medizintechnik.com" in t: #website down
                 if "fenomed" in t or "helpishop" in t or "bhvtotaal" in t:
@@ -437,5 +439,5 @@ def fetch_data_runner():
         fetch_data()
         time.sleep(300)
 
-fetch_data()
+#fetch_data()
 #print(handle_list('Test', test_list))
