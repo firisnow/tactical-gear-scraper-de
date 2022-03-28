@@ -53,5 +53,13 @@ em_bandages_url_list = [
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM26",
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM6",
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM7",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM4"
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM4",
+    "https://www.meetb.de/704/israeli-bandage-10cm-x-4-5m-gruen",
+    "https://www.meetb.de/1201/israeli-bandage-15cm-x-4-5m-gruen",
+    "https://www.meetb.de/3048/israeli-bandage-abdominal-20cm-x-1-9m-gruen-mit-30-x-30cm-wundauflage",
+    "https://www.tactical-equipements.fr/Pansement/385-fcp-01-pansement-compressif-israelien-4-first-care.html",
+    "https://www.tactical-equipements.fr/Pansement/387-fcp-02-pansement-compressif-israelien-6-first-care.html",
+    "https://www.tactical-equipements.fr/Pansement/386-fcp-05-pansement-compressif-israelien-2-pad-6-green-w2nd-first-care.html",
+    "https://www.tactical-equipements.fr/Pansement/384-fcp-07-pansement-compressif-israelien-2-pad-4-green-w2nd-first-care.html",
+
 ]

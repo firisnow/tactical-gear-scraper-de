@@ -52,5 +52,15 @@ tourniquet_url_list = [
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS2-A",
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS9",
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS9-A",
-
+    "https://www.meetb.de/8695/sam-xt-tourniquet-schwarz/schwarz",
+    "https://www.meetb.de/561/cat-combat-application-tourniquet-schwarz-kompaktes-abbinde-system",
+    "https://www.meetb.de/7139/sof-tactical-tourniquet-w-4th-generation-orange-15x5x5-cm",
+    "https://www.meetb.de/560/cat-combat-application-tourniquet-orange-abbinde-system",
+    "https://www.meetb.de/1632/sam-xt-tourniquet-orange",
+    "https://www.meetb.de/6381/sof-tactical-tourniquet-w-4th-generation-schwarz-15-x5-x-5cm",
+    "https://www.tactical-equipements.fr/garrot/57-garrot-sof-tactical-tourniquet-original-noir-tactical-medical-solution.html",
+    "https://www.tactical-equipements.fr/garrot/6083-garrot-sof-tactical-tourniquet-original-orange-tactical-medical-solution.html",
+    "https://www.tactical-equipements.fr/garrot/3381-garrot-sof-tactical-tourniquet-wide-gen-4-noir-tactical-medical-solution.html",
+    "https://www.tactical-equipements.fr/garrot/6082-garrot-sof-tactical-tourniquet-wide-gen-4-orange-tactical-medical-solution.html",
+    ""
 ]

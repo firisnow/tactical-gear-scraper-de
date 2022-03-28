@@ -36,5 +36,24 @@ hem_dressing_url_list = [
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM11",
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM11-A"
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM10",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM19-A"
+    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM19-A",
+    "https://bhvtotaal.nl/celox-gauze-z-fold",
+    "https://bhvtotaal.nl/chito-sam-patch",
+    "https://www.lsinnoventa.com/en/chitosam-10x10cm.html",
+    "https://www.lsinnoventa.com/en/chitosam-6inch.html",
+    "https://www.lsinnoventa.com/en/celox-rapid-z-fold.html",
+    "https://www.lsinnoventa.com/en/celox-gauze-z-fold.html",
+    "https://www.lsinnoventa.com/en/celox-gauze-roll.html",
+    "https://www.lsinnoventa.com/en/chitogauze-xr-pro.html",
+    "https://www.meetb.de/5327/celox-gauze-z-gefaltet-7-6-cm-x-1-52-m",
+    "https://www.meetb.de/1415/celox-gauze-rolle-7-6-cm-x-3-m-blutstillendes-produkt-auf-chitosan-basis",
+    "https://www.meetb.de/6290/celox-gauze-rapid-z-gefaltet-7-6-cm-x-1-52-m",
+    "https://www.meetb.de/7184/quikclot-ems-gauze-gerollt-7-6-x-122cm",
+    "https://www.meetb.de/6958/quikclot-ems-dressing-10x10-cm-pack-mit-3-stueck-blutstillende-wundauflage-einzeln-verpackt",
+    "https://www.meetb.de/3320/quikclot-7-5-x-370-cm-gauze-zur-blutstillung-z-gefaltet",
+    "https://www.meetb.de/755/chitogauze-xr-pro-7-5-cm-x-3-70-m-zur-blutstillung-z-gefaltet",
+    "https://www.meetb.de/8164/chitosam-100-blutstillende-kompresse-7-5-x-183-cm-z-gefaltet",
+    "https://www.tactical-equipements.fr/hemostatique/390-rapid-z-fold-gauze-celox.html",
+    "https://www.tactical-equipements.fr/hemostatique/393-4.html",
+    "https://www.tactical-equipements.fr/hemostatique/394-roll-gauze-celox.html"
 ]
