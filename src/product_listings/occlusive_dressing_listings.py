@@ -31,5 +31,11 @@ occ_dressing_url_list = [
     "https://www.medididakt.de/shop/notfallequipment-notfallbehaeltnisse-notfallsets/sonstiges-notfallequipment-notfallbehaeltnisse-notfallsets/thoraxpflaster-hyfin-chest-seal/",
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM8",
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM9",
+    "https://www.meetb.de/7095/h-vent-chest-seal-packung-mit-2-stueck",
+    "https://www.meetb.de/1626/brustverband-russel-chest-seal-prometheus-steril-selbstklebend-latexfrei-mit-4-drainagen",
+    "https://www.meetb.de/2063/hyfin-chest-seals-mit-ventilen-1-stueck-2-einheiten",
+    "https://www.meetb.de/2064/sam-chest-seal-thorax-pflaster-steril-einzeln-fuer-brustverletzungen-mit-ventil",
+    "https://www.meetb.de/1625/sam-chest-seal-thorax-pflaster-steril-2er-pack-fuer-brustverletzungen-ohne-ventil",
+    "https://www.tactical-equipements.fr/Pansement/5794-chest-seal-avec-valve-20-sam-medical.html",
 
 ]

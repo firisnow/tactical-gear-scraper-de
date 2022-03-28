@@ -35,9 +35,65 @@ prefetched_data_to_serialize = {
 
 
 test_list = [
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=MEDI-SWATT&CHKBez&Suche&txtSuchwert=tourniquet&maibm=1&mapg=2",
-    "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-VBM4&CHKBez&txtSuchwert=bandage&sb=Artikelnummersort&maibm=1&mapg=2&Start=40&AnzGes=60"
-    ]
+    "https://outpost-shop.com/de/medical/3418-celox-haemostatic-granules-5060206630369.html",
+    "https://www.tactical-equipements.fr/Short/3893-13388-bermuda-blackwater-20-tan-toe.html"
+
+]
+
+
+def handle_outpost_shop_listing(soup):
+    pass
+
+
+def handle_tactical_equipements_fr_listing(soup):
+    for tag in soup.find_all(class_="product-unavailable"):
+        return None, None, None
+
+    name = soup.h1.string.strip()
+    for tag in soup.find_all('span', itemprop="price"):
+        price = tag["content"]
+        break
+    return name, price, None
+
+
+def handle_meetb_listing(soup):
+    versand = False
+    for tag in soup.find_all(class_="fv-style-detail"):
+        if "sofort verfügbar" in tag.get_text():
+            versand = True
+
+    if not versand:
+        return None, None, None
+    name = soup.h1.string.strip()
+    for tag in soup.find_all('meta', itemprop="price"):
+        price = tag["content"]
+        break
+    return name, price, None
+
+
+def handle_lsinnoventa_listing(soup):
+    for tag in soup.find_all(class_="out-of-stock"):
+        return None, None, None
+
+    name = soup.h1.string.strip()
+    for tag in soup.find_all('span', class_="price"):
+        price = tag.get_text()[1:].strip()
+        break
+    return name, price, None
+
+
+def handle_bhvtotaal_listing(soup):
+    for tag in soup.find_all(class_="outofstock"):
+        return None, None, None
+
+    for tag in soup.find_all(itemprop="name"):
+        if tag['data-ui-id'] == "page-title-wrapper":
+            name = tag.string.strip()
+            break
+    for tag in soup.find_all('span', class_="price"):
+        price = tag.string.strip()[2:]
+        break
+    return name, price, None
 
 
 def handle_helpishop_listing(soup):
@@ -289,7 +345,7 @@ def handle_list(name, url_list):
     for t in url_list:
         try:
             if not "mbs-medizintechnik.com" in t: #website down
-                if "fenomed" in t or "helpishop" in t:
+                if "fenomed" in t or "helpishop" in t or "bhvtotaal" in t:
                     r = session.get(t)
                     r.html.render(timeout=20)
                     soup = BeautifulSoup(r.html.html, features="html.parser")
@@ -336,6 +392,16 @@ def handle_list(name, url_list):
                 l = handle_sanismart_listing(soup)
             elif "helpishop" in t:
                 l = handle_helpishop_listing(soup)
+            elif "bhvtotaal" in t:
+                l = handle_bhvtotaal_listing(soup)
+            elif "lsinnoventa" in t:
+                l = handle_lsinnoventa_listing(soup)
+            elif "meetb" in t:
+                l = handle_meetb_listing(soup)
+            elif "tactical-equipements.fr" in t:
+                l = handle_tactical_equipements_fr_listing(soup)
+            elif "outpost-shop" in t:
+                l = handle_outpost_shop_listing(soup)
             else:
                 l = [None]
         except:
@@ -371,5 +437,5 @@ def fetch_data_runner():
         fetch_data()
         time.sleep(300)
 
-#fetch_data()
+fetch_data()
 #print(handle_list('Test', test_list))
