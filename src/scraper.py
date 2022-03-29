@@ -346,7 +346,7 @@ def handle_list(name, url_list):
         #print(t)
 
         try:
-            if not "mbs-medizintechnik.com" in t and "lsinnoventa" in t:
+            if not ("mbs-medizintechnik.com" in t or "lsinnoventa" in t):
                 #website down, don't ship to de
                 if "fenomed" in t or "helpishop" in t or "bhvtotaal" in t:
                     r = session.get(t)
