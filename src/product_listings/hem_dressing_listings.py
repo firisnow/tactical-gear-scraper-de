@@ -14,7 +14,7 @@ hem_dressing_url_list = [
     "https://www.mbs-medizintechnik.com/1049/quikclot-ems-rolled-gauze",
     "https://www.mbs-medizintechnik.com/1050/quikclot-ems-dressing-3-stk-10-x-10-cm-kompressen",
     "https://www.mbs-medizintechnik.com/1702/quikclot-gauze-z-folded",
-    "https://flexeo.shop/produkt/quikclot-gauze-gefaltet-75cm-x-37m-combat-gauze/",
+    #"https://flexeo.shop/produkt/quikclot-gauze-gefaltet-75cm-x-37m-combat-gauze/",
     "https://flexeo.shop/produkt/chitosam-100-10x10cm-kompresse/",
     "https://www.1a-medizintechnik.de/CELOX-RAPID-Gauze-Z-Fold/10737",
     "https://www.1a-medizintechnik.de/Celox-Z-gefaltet-Gauze-7-6-cm-x-1-52-m/8705",
