@@ -37,5 +37,9 @@ occ_dressing_url_list = [
     "https://www.meetb.de/2064/sam-chest-seal-thorax-pflaster-steril-einzeln-fuer-brustverletzungen-mit-ventil",
     "https://www.meetb.de/1625/sam-chest-seal-thorax-pflaster-steril-2er-pack-fuer-brustverletzungen-ohne-ventil",
     "https://www.tactical-equipements.fr/Pansement/5794-chest-seal-avec-valve-20-sam-medical.html",
+    "https://www.medicbravoshop.de/SAM-Chest-Seal-mit-Ventil",
+    "https://www.medicbravoshop.de/Beacon-Chest-Seal-mit-Ventilen-2er-Pack",
+    "https://www.medicbravoshop.de/Beacon-Chest-Seal-ohne-Ventil",
+    "https://www.medicbravoshop.de/H-Vent-Chest-Seal-2-Stk",
 
 ]

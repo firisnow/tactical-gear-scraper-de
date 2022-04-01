@@ -11,5 +11,7 @@ swat_tourniquet_url_list = [
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=MEDI-SWATT",
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS4",
     "https://helpishop.de/3xios/index1.php?detailsZeigen=true&Artikelnummer=NFVM-TRS4-A",
+    "https://www.medicbravoshop.de/SWAT-T-Tourniquet-schwarz",
+    "https://www.nltactical.nl/en/hh-swat-t-tourniquet-black.html",
 
 ]
