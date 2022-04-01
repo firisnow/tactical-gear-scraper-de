@@ -61,5 +61,12 @@ em_bandages_url_list = [
     "https://www.tactical-equipements.fr/Pansement/387-fcp-02-pansement-compressif-israelien-6-first-care.html",
     "https://www.tactical-equipements.fr/Pansement/386-fcp-05-pansement-compressif-israelien-2-pad-6-green-w2nd-first-care.html",
     "https://www.tactical-equipements.fr/Pansement/384-fcp-07-pansement-compressif-israelien-2-pad-4-green-w2nd-first-care.html",
+    "https://www.medicbravoshop.de/Emergency-Bandage-Abdominalbandage-Multi-Bandage",
+    "https://www.medicbravoshop.de/notfallverband-israeli-10cm",
+    "https://www.medicbravoshop.de/notfallverband-israeli-15cm",
+    "https://www.medicbravoshop.de/T3-Bandage-Tactical-Trauma-Treatment-Bandage",
+    "https://www.medicbravoshop.de/TacMed-Solutions-OLAES-Bandage-10cm-4",
+    "https://www.medicbravoshop.de/TacMed-Solutions-OLAES-Bandage-15cm-6",
+    "https://www.nltactical.nl/en/emergency-israeli-bandage-15-cm-civ.html",
 
 ]

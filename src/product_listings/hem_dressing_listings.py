@@ -55,5 +55,21 @@ hem_dressing_url_list = [
     "https://www.meetb.de/8164/chitosam-100-blutstillende-kompresse-7-5-x-183-cm-z-gefaltet",
     "https://www.tactical-equipements.fr/hemostatique/390-rapid-z-fold-gauze-celox.html",
     "https://www.tactical-equipements.fr/hemostatique/393-4.html",
-    "https://www.tactical-equipements.fr/hemostatique/394-roll-gauze-celox.html"
+    "https://www.tactical-equipements.fr/hemostatique/394-roll-gauze-celox.html",
+    "https://www.emtshop.be/en/sam-medical-chitosam-100-hemostatic-dressing.html",
+    "https://www.emtshop.be/en/ems-rolled-gauze.html",
+    "https://www.emtshop.be/en/quikclot-combat-gauze-mil.html",
+    "https://www.emtshop.be/en/sam-medical-chitosam-100-haemostatic-zfold-gauze.html",
+    "https://www.emtshop.be/en/celox-z-fold.html",
+    "https://www.emtshop.be/en/celox-rapid-z-fold.html",
+    "https://www.emtshop.be/en/celox-rapid-ribbon-haemostatic.html",
+    "https://www.medicbravoshop.de/ChitoSAM-100-75x183-cm-Gauze-Z-gefaltet",
+    "https://www.medicbravoshop.de/ChitoSAM-100-10x10cm-Kompresse",
+    "https://www.medicbravoshop.de/Quikclot-Gauze-76cm-x-365m",
+    "https://www.adventurestore.lu/de/product/hygiene-erste-hilfe/21005-quikclot-10x10-ems-dressing-set-of-3.html",
+    "https://www.adventurestore.lu/de/product/hygiene-erste-hilfe/21006-quikclot-ems-rolled-gauze.html",
+    "https://www.nltactical.nl/en/celox-gauze-z-fold.html",
+    "https://www.nltactical.nl/en/sam-chito-sam-z-fold-6.html",
+    "https://www.nltactical.nl/en/sam-chito-sam-patch-10x10.html",
+
 ]

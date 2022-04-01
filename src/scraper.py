@@ -5,8 +5,6 @@ import json
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 
-#from requests.exceptions import NewConnectionError
-
 from product_listings.trauma_kit_listings import trauma_kit_url_list
 from product_listings.tourniquet_listings import tourniquet_url_list
 from product_listings.swat_tourniquet_listings import swat_tourniquet_url_list
@@ -35,14 +33,56 @@ prefetched_data_to_serialize = {
 
 
 test_list = [
-    "https://outpost-shop.com/de/medical/3418-celox-haemostatic-granules-5060206630369.html",
-    "https://www.tactical-equipements.fr/Short/3893-13388-bermuda-blackwater-20-tan-toe.html"
-
+    "https://www.nltactical.nl/en/sam-chito-sam-z-fold-6.html",
+    "https://www.nltactical.nl/en/soffe-t-shirt-black-3-pack.html"
 ]
 
 
-def handle_outpost_shop_listing(soup):
-    pass
+def handle_nltactical_listing(soup):
+    # <span class="hurry too-late"><i class="icon-negative"></i> Out of stock</span>
+    for tag in soup.find_all(class_="too-late"):
+        return None, None, None
+
+    name = soup.h1.string.strip()
+    for tag in soup.find_all("div", class_="for"):
+        price = tag.get_text().split('In stock')[0].strip()[1:].strip()
+        break
+    return name, price, None
+
+
+def handle_adventurestore_listing(soup):
+    # <div id="product-availability" class="js-product-availability product-unavailable mar_b6 fs_md"> Nicht auf Lager</div>
+    for tag in soup.find_all(class_="product-unavailable"):
+        if "Nicht auf Lager" in tag.get_text():
+            return None, None, None
+
+    name = soup.h1.string.strip()
+    for tag in soup.find_all("span", class_="price"):
+        price = tag["content"]
+        break
+    return name, price, None
+
+
+def handle_medicbravo_listing(soup):
+    for tag in soup.find_all(class_="status-0"):
+        return None, None, None
+
+    name = soup.h1.string.strip()
+    for tag in soup.find_all("div", class_="price"):
+        price = tag.contents[1].get_text().strip()[:-1].strip()
+        break
+    return name, price, None
+
+
+def handle_emtshop_shop_listing(soup):
+    for tag in soup.find_all(class_="out-of-stock"):
+        return None, None, None
+
+    name = soup.h1.string.strip()
+    for tag in soup.find_all("div", class_="price"):
+        price = tag.get_text().split('Incl. tax')[0].strip()[1:]
+        break
+    return name, price, None
 
 
 def handle_tactical_equipements_fr_listing(soup):
@@ -348,7 +388,8 @@ def handle_list(name, url_list):
         try:
             if not ("mbs-medizintechnik.com" in t or "lsinnoventa" in t):
                 #website down, don't ship to de
-                if "fenomed" in t or "helpishop" in t or "bhvtotaal" in t:
+                if "fenomed" in t or "helpishop" in t or \
+                        "bhvtotaal" in t:
                     r = session.get(t)
                     r.html.render(timeout=20)
                     soup = BeautifulSoup(r.html.html, features="html.parser")
@@ -403,8 +444,14 @@ def handle_list(name, url_list):
                 l = handle_meetb_listing(soup)
             elif "tactical-equipements.fr" in t:
                 l = handle_tactical_equipements_fr_listing(soup)
-            elif "outpost-shop" in t:
-                l = handle_outpost_shop_listing(soup)
+            elif "emtshop" in t:
+                l = handle_emtshop_shop_listing(soup)
+            elif "medicbravoshop" in t:
+                l = handle_medicbravo_listing(soup)
+            elif "adventurestore" in t:
+                l = handle_adventurestore_listing(soup)
+            elif "nltactical" in t:
+                l = handle_nltactical_listing(soup)
             else:
                 l = [None]
         except:
