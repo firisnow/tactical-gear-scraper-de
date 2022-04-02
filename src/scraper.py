@@ -486,6 +486,5 @@ def fetch_data_runner():
     while True:
         fetch_data()
         time.sleep(300)
-
 #fetch_data()
 #print(handle_list('Test', test_list))
