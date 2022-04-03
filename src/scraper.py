@@ -1,6 +1,7 @@
 import requests
 import time
 import json
+import logging
 
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
@@ -402,6 +403,7 @@ def handle_list(name, url_list):
             soup = None
 
         try:
+            logging.info('Processing', t)
             if soup is None:
                 l = [None]
             elif 'medic-bandages' in t:
@@ -478,7 +480,7 @@ def fetch_data():
         with open('/src/output/tacmed_data.json', 'w', encoding='utf-8') as f:
             json.dump(prefetched_data_to_serialize, f, ensure_ascii=False, indent=4)
     except:
-        pass
+        logging.error('Could not dump prefetched data')
 
 
 def fetch_data_runner():
@@ -486,5 +488,6 @@ def fetch_data_runner():
     while True:
         fetch_data()
         time.sleep(300)
+
 #fetch_data()
 #print(handle_list('Test', test_list))
