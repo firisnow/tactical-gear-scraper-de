@@ -448,8 +448,8 @@ def handle_list(name, url_list):
                 l = handle_tactical_equipements_fr_listing(soup)
             elif "emtshop" in t:
                 l = handle_emtshop_shop_listing(soup)
-            elif "medicbravoshop" in t:
-                l = handle_medicbravo_listing(soup)
+            #elif "medicbravoshop" in t: # prices rise so much wtf?
+            #    l = handle_medicbravo_listing(soup)
             elif "adventurestore" in t:
                 l = handle_adventurestore_listing(soup)
             elif "nltactical" in t:
