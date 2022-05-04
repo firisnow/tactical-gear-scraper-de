@@ -364,6 +364,10 @@ def handle_medic_bandages_listing(soup):
     name = soup.h1.string
     for tag_p in soup.find_all(class_="current-price-container"):
         price = tag_p.get_text().split('EUR')[0].strip()
+        if "UVP" in price:
+            price = tag_p.contents[3].split('Nur')[1]\
+                .split('EUR')[0].strip()
+            print(price)
         break
     lager = None
     for tag_q in soup.find_all(class_="products-quantity-value"):
