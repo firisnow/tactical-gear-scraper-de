@@ -47,8 +47,8 @@ def handle_nltactical_listing(soup):
     name = soup.h1.string.strip()
     for tag in soup.find_all("div", class_="for"):
         price = tag.get_text().split('In stock')[0].strip()[1:].strip()
-        if ".-" in price:
-            price = price.split('.-')[0]
+        if ",-" in price:
+            price = price.split(',-')[0]
         break
     return name, price, None
 
