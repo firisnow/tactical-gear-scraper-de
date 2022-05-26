@@ -466,8 +466,13 @@ def handle_list(name, url_list):
             l = [None]
 
         if l[0] is not None:
-            l_res.append((*l, t))
-
+            try:
+                l[1] = float(l[1].replace(',', '.'))
+                l_res.append((*l, t))
+            except ValueError:
+                print("Could not convert price:", t)
+    
+   
     l_res = sorted(l_res, key=lambda tup: float(tup[1].replace(',', '.')))
     for l in l_res:
         result = result + "\n\n" + format_listing(link=l[3], name=l[0],
