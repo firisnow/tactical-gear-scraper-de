@@ -466,11 +466,10 @@ def handle_list(name, url_list):
             l = [None]
 
         if l[0] is not None:
-            try:
-                l[1] = float(l[1].replace(',', '.'))
-                l_res.append((*l, t))
-            except ValueError:
+            if "€" in l[1]:
                 print("Could not convert price:", t)
+            else:
+                l_res.append((*l, t))
     
    
     l_res = sorted(l_res, key=lambda tup: float(tup[1].replace(',', '.')))
